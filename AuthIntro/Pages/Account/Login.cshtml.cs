@@ -29,7 +29,8 @@ namespace AuthIntro.Pages.Account
                     new Claim("Admin", "true"),
                     new Claim(ClaimTypes.Name, "admin"),
                     new Claim(ClaimTypes.Email, "admin@gmail.com"),
-                    new Claim("Department", "HR")
+                    new Claim("Department", "HR"),
+                    new Claim("Manager", "true")
                 };
 
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
