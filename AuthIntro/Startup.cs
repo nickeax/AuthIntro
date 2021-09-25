@@ -28,6 +28,12 @@ namespace AuthIntro
                 options.Cookie.Name = "MyCookieAuth";
             });
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustBelongToHRDepartment",
+                    policy => policy.RequireClaim("Department", "HR"));
+            });
+
             services.AddRazorPages();
         }
 
