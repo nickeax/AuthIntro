@@ -26,6 +26,7 @@ namespace AuthIntro.Pages.Account
                 // Creating the security context
                 var claims = new List<Claim>()
                 {
+                    new Claim("Admin", "true"),
                     new Claim(ClaimTypes.Name, "admin"),
                     new Claim(ClaimTypes.Email, "admin@gmail.com"),
                     new Claim("Department", "HR")

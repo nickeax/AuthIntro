@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace AuthIntro
@@ -32,6 +33,8 @@ namespace AuthIntro
             {
                 options.AddPolicy("MustBelongToHRDepartment",
                     policy => policy.RequireClaim("Department", "HR"));
+                options.AddPolicy("AdminOnly",
+                    policy => policy.RequireClaim("Admin"));
             });
 
             services.AddRazorPages();
